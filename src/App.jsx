@@ -76,7 +76,7 @@ export default function App() {
             </div>
           )}
           <DotLottieReact
-            src="https://lottie.host/0829a14a-9719-4aa6-86f0-3df122be4600/BCo9wBbKlG.lottie"
+            src="https://lottie.host/3332de7c-1dc4-4e9d-af5b-f1b308f4a1e2/57Tu14nPEU.lottie"
             dotLottieRefCallback={setDotLottie}
           />
         </>
