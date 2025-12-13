@@ -6,7 +6,7 @@ export function Input({ type, name }) {
 
 export default function Index() {
   const [flip, setFlip] = useState(false);
-
+  const [show_password, setShow_Password] = useState(false);
   return (
     <div className="w-full h-dvh flex flex-col items-center md:flex-row md:justify-around bg-[url('/stars_galaxy.jpg')]">
       <div className="w-full flex items-center justify-center md:w-2/4 xl:w-1/4 md:h-3/4 md:rounded-lg h-full backdrop-blur-[3px] bg-[rgba(255,255,255,0.1)] border-3 border-[rgba(255,255,255,0.3)]">
@@ -25,17 +25,17 @@ export default function Index() {
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Password</b>
-                <Input type="password" />
+                <Input type={show_password ? 'text' : 'password'}/>
                 <div className="flex items-center gap-1 cursor-pointer">
-                  <input name="remember_me" type="checkbox" />
+                  <input name="show_password" type="checkbox" onChange={() => setShow_Password((prev) => !prev)} />
                   <small
                     className="select-none"
-                    onClick={() =>
-                      (document.querySelector('[name="remember_me"]').checked =
-                        !document.querySelector('[name="remember_me"]').checked)
-                    }
+                    onClick={() =>{
+                      document.querySelector('[name="show_password"]').checked = !document.querySelector('[name="show_password"]').checked
+                      setShow_Password((prev) => !prev)
+                    }}
                   >
-                    REMEMBER ME
+                    SHOW PASSWORD
                   </small>
                 </div>
               </div>
