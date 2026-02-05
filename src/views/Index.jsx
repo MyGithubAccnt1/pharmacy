@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function Input({ type, name, autoComplete = null }) {
-  return <input type={type} name={name} className="p-2 w-full bg-[#E8F0FE]" autoComplete={autoComplete} />;
+  return <input type={type} name={name} className="p-2 w-full bg-[#E8F0FE] text-black focus:outline-0" autoComplete={autoComplete} />;
 }
 
 export default function Index() {
@@ -71,7 +71,19 @@ export default function Index() {
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Password</b>
-                <Input type="password" autoComplete="current-password" />
+                <Input type={show_password ? 'text' : 'password'} autoComplete="current-password"/>
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <input name="show_password" type="checkbox" onChange={() => setShow_Password((prev) => !prev)} />
+                  <small
+                    className="select-none"
+                    onClick={() =>{
+                      document.querySelector('[name="show_password"]').checked = !document.querySelector('[name="show_password"]').checked
+                      setShow_Password((prev) => !prev)
+                    }}
+                  >
+                    SHOW PASSWORD
+                  </small>
+                </div>
               </div>
             </div>
             <button
