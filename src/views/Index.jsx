@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export function Input({ type, name }) {
-  return <input type={type} name={name} className="p-2 w-full bg-[#E8F0FE]" />;
+export function Input({ type, name, autoComplete = null }) {
+  return <input type={type} name={name} className="p-2 w-full bg-[#E8F0FE]" autoComplete={autoComplete} />;
 }
 
 export default function Index() {
@@ -10,8 +10,8 @@ export default function Index() {
   return (
     <div className="w-full h-dvh flex flex-col items-center md:flex-row md:justify-around bg-[url('/stars_galaxy.jpg')]">
       <div className="w-full flex items-center justify-center md:w-2/4 xl:w-1/4 md:h-3/4 md:rounded-lg h-full backdrop-blur-[3px] bg-[rgba(255,255,255,0.1)] border-3 border-[rgba(255,255,255,0.3)]">
-        <form className="h-3/4 w-3/4 relative overflow-hidden">
-          <div
+        <div className="h-3/4 w-3/4 relative overflow-hidden">
+          <form
             className={`absolute h-full w-full flex flex-col justify-around items-center transition-all duration-1500 ${flip ? "" : "translate-x-[150%]"}`}
           >
             <button className="button-title" type="button">
@@ -21,11 +21,11 @@ export default function Index() {
             <div className="w-full min-h-1/4 flex flex-col gap-8 justify-between items-center">
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Email</b>
-                <Input type="email" />
+                <Input type="email" autoComplete="email" />
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Password</b>
-                <Input type={show_password ? 'text' : 'password'}/>
+                <Input type={show_password ? 'text' : 'password'} autoComplete="current-password"/>
                 <div className="flex items-center gap-1 cursor-pointer">
                   <input name="show_password" type="checkbox" onChange={() => setShow_Password((prev) => !prev)} />
                   <small
@@ -55,9 +55,9 @@ export default function Index() {
                 Sign up here.
               </span>
             </small>
-          </div>
+          </form>
 
-          <div
+          <form
             className={`absolute h-full w-full flex flex-col justify-around items-center transition-all duration-1500 ${flip ? "-translate-x-[150%]" : ""}`}
           >
             <button className="button-title" type="button">
@@ -67,11 +67,11 @@ export default function Index() {
             <div className="w-full min-h-1/4 flex flex-col gap-8 justify-between items-center">
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Email</b>
-                <Input type="email" />
+                <Input type="email" autoComplete="email" />
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <b className="font-bold">Password</b>
-                <Input type="password" />
+                <Input type="password" autoComplete="current-password" />
               </div>
             </div>
             <button
@@ -89,8 +89,8 @@ export default function Index() {
                 Sign in here.
               </span>
             </small>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );
