@@ -1,18 +1,27 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export function Input({ type, name, autoComplete = null }) {
   return <input type={type} name={name} className="p-2 w-full bg-[#E8F0FE] text-black focus:outline-0" autoComplete={autoComplete} />;
 }
 
 export default function Index() {
-  const [flip, setFlip] = useState(false);
+  const [flip, setFlip] = useState(true);
   const [show_password, setShow_Password] = useState(false);
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/home");
+  }
+  const handleSignup = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className="w-full h-dvh flex flex-col items-center md:flex-row md:justify-around bg-[url('/stars_galaxy.jpg')]">
       <div className="w-full flex items-center justify-center md:w-2/4 xl:w-1/4 md:h-3/4 md:rounded-lg h-full backdrop-blur-[3px] bg-[rgba(255,255,255,0.1)] border-3 border-[rgba(255,255,255,0.3)]">
         <div className="h-3/4 w-3/4 relative overflow-hidden">
           <form
             className={`absolute h-full w-full flex flex-col justify-around items-center transition-all duration-1500 ${flip ? "" : "translate-x-[150%]"}`}
+            onSubmit={handleLogin}
           >
             <button className="button-title" type="button">
               SIGN IN
@@ -59,6 +68,7 @@ export default function Index() {
 
           <form
             className={`absolute h-full w-full flex flex-col justify-around items-center transition-all duration-1500 ${flip ? "-translate-x-[150%]" : ""}`}
+            onSubmit={handleSignup}
           >
             <button className="button-title" type="button">
               SIGN UP
