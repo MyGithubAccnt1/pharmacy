@@ -44,7 +44,7 @@ export default function Index() {
               type="submit"
               className="relative w-[calc(100%-15px)] py-2 rounded-full cursor-pointer bg-linear-to-b from-[rgba(0,0,0,0.1)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.1)]"
             >
-              <small className="button-login">LOGIN</small>
+              <small className="button-rainbow">LOGIN</small>
             </button>
             <small className="text-sm">
               You don`t have an account?{" "}
@@ -90,7 +90,7 @@ export default function Index() {
               type="submit"
               className="relative w-[calc(100%-15px)] py-2 rounded-full cursor-pointer bg-linear-to-b from-[rgba(0,0,0,0.1)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.1)]"
             >
-              <small className="button-login">REGISTER</small>
+              <small className="button-rainbow">REGISTER</small>
             </button>
             <small className="text-sm">
               You don`t have an account?{" "}

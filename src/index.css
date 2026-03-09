@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-.button-login:before {
+.button-rainbow:before {
     content: "";
     background: linear-gradient(
         45deg,
@@ -54,7 +54,7 @@
     }
 }
 
-.button-login:after {
+.button-rainbow:after {
     z-index: -1;
     content: "";
     position: absolute;

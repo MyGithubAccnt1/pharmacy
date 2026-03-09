@@ -24,12 +24,15 @@ function Notfound() {
         <p className="text-gray-500">
           It looks like you found a glitch in the matrix...
         </p>
-        <Button
-          onClick={handleBackToHome}
-          className={`bg-gradient-to-b from-red-300 via-red-400 to-red-500 text-white hover:rounded-[50px] w-full md:w-1/2 xl:w-1/4`}
-        >
-          Return Home
-        </Button>
+        <div className="relative mt-3 hover:rounded-[50px] w-full md:w-1/2 xl:w-1/4">
+          <Button
+            onClick={handleBackToHome}
+            className={`button-rainbow text-white w-full`}
+          >
+            Return Home
+          </Button>
+        </div>
+        
       </div>
     </>
   );
