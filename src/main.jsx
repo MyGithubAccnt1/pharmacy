@@ -6,7 +6,7 @@ import App from './App.jsx'
 import Notfound from './views/Notfound.jsx';
 import Index from './views/Index.jsx'
 import Home from './views/Home.jsx';
-import HomeLayout from './HomeLayout.jsx';
+import HomeLayout from './layout/HomeLayout.jsx';
 
 const router = createBrowserRouter([
   {
